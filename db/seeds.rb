@@ -5,27 +5,62 @@ puts "🗑️ Clearing old data..."
 
 puts "🌱 Seeding data..."
 
-2.times do
-    User.create(
-        username: Faker::Name.name,
-        password: Faker::String.random(length: 10..14),
-    )
-end
+User.create(
+    username: "raulreymundi",
+    password: "123456789"
+)
 
-10.times do
-	List.create(
-		name: Faker::Lorem.words(number: 3),
-	)
-end
+User.create(
+    username: "gabibenedit",
+    password: "987654321"
+)
 
-50.times do
-    Task.create(
-      name: Faker::Lorem.words(number: 2),
-      description: Faker::Lorem.sentence(word_count: 4),
-      saved: Faker::Boolean.boolean,
-      user_id: User.pluck( :id ).sample,
-      list_id: List.pluck( :id ).sample
-    )
-end
+List.create(
+    name: "Work"
+)
+
+List.create(
+    name: "School"
+)
+
+List.create(
+    name: "Groceries"
+)
+
+List.create(
+    name: "Bills"
+)
+
+Task.create(
+    name: "Quarterly report",
+    description: "Share slide deck with team",
+    saved: false,
+    user_id: 1,
+    list_id: 1
+)
+
+Task.create(
+    name: "Phase 3 project",
+    description: "Finish backend setup",
+    saved: false,
+    user_id: 1,
+    list_id: 2
+)
+
+Task.create(
+    name: "Dinner ingredients",
+    description: "Get ingredients for tonight's dinner",
+    saved: false,
+    user_id: 2,
+    list_id: 3
+)
+
+Task.create(
+    name: "Internet",
+    description: "Call internet company to ask about service upgrade",
+    saved: false,
+    user_id: 2,
+    list_id: 4
+)
 
 puts "✅ Done seeding!"
