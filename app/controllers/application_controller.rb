@@ -37,4 +37,40 @@ class ApplicationController < Sinatra::Base
     list.to_json
   end
 
+  get "/tasks" do
+    tasks = Task.all
+    tasks.to_json
+  end
+
+  get "/tasks/:id" do
+    task = Task.find(params[:id])
+    task.to_json(include: :lists)
+  end
+
+  delete '/tasks/:id' do
+    task = Task.find(params[:id])
+    task.destroy
+    task.to_json
+  end
+
+  post '/tasks' do 
+    task = Task.create(
+      name: params[:name],
+      description: params[:description],
+      saved: params[:saved],
+      user_id: params[:user_id],
+      list_id: params[:list_id]
+    )
+  end
+
+  patch '/tasks/:id' do
+    task = Task.find(params[:id])
+    task.update(
+      name: params[:name],
+      description: params[:description],
+      saved: params[:saved],
+      list_id: params[:list_id]
+    )
+  end
+
 end
