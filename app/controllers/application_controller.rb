@@ -3,12 +3,12 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Welcome to my Phase 3 project!" }.to_json
+    { message: "Welcome to List dot IT!" }.to_json
   end
 
   get "/lists" do
     lists = List.all 
-    lists.to_json
+    lists.to_json(include: :tasks)
   end
 
   get "/lists/:id" do
@@ -27,6 +27,7 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
     )
     list.to_json
+    binding.pry
   end
 
   patch '/lists/:id' do

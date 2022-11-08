@@ -6,13 +6,13 @@ puts "🗑️ Clearing old data..."
 puts "🌱 Seeding data..."
 
 User.create(
-    username: "raulreymundi",
-    password: "123456789"
+    username: "raul",
+    password: "1234"
 )
 
 User.create(
-    username: "gabibenedit",
-    password: "987654321"
+    username: "gabi",
+    password: "1234"
 )
 
 List.create(
@@ -36,7 +36,8 @@ Task.create(
     description: "Share slide deck with team",
     saved: false,
     user_id: 1,
-    list_id: 1
+    list_id: 1,
+    status: false
 )
 
 Task.create(
@@ -44,7 +45,8 @@ Task.create(
     description: "Finish backend setup",
     saved: false,
     user_id: 1,
-    list_id: 2
+    list_id: 2,
+    status: false
 )
 
 Task.create(
@@ -52,7 +54,8 @@ Task.create(
     description: "Get ingredients for tonight's dinner",
     saved: false,
     user_id: 2,
-    list_id: 3
+    list_id: 3,
+    status: false
 )
 
 Task.create(
@@ -60,7 +63,8 @@ Task.create(
     description: "Call internet company to ask about service upgrade",
     saved: false,
     user_id: 2,
-    list_id: 4
+    list_id: 4,
+    status: false
 )
 
 puts "✅ Done seeding!"
