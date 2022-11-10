@@ -45,7 +45,7 @@ class ApplicationController < Sinatra::Base
 
   get "/tasks/:id" do
     task = Task.find(params[:id])
-    task.to_json(include: :lists)
+    task.to_json
   end
 
   delete '/tasks/:id' do
@@ -58,19 +58,21 @@ class ApplicationController < Sinatra::Base
     task = Task.create(
       name: params[:name],
       description: params[:description],
-      saved: params[:saved],
+      saved: false,
       user_id: params[:user_id],
-      list_id: params[:list_id]
+      list_id: params[:list_id],
+      status: false
     )
   end
 
   patch '/tasks/:id' do
     task = Task.find(params[:id])
     task.update(
-      name: params[:name],
-      description: params[:description],
+      # name: params[:name],
+      # description: params[:description],
       saved: params[:saved],
-      list_id: params[:list_id]
+      # list_id: params[:list_id],
+      status: params[:status]
     )
   end
 
