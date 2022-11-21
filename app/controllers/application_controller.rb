@@ -19,15 +19,14 @@ class ApplicationController < Sinatra::Base
   delete '/lists/:id' do
     list = List.find(params[:id])
     list.destroy
-    list.to_json
+    list.to_json(include: :tasks)
   end
 
   post '/lists' do
     list = List.create(
       name: params[:name],
     )
-    list.to_json
-    binding.pry
+    list.to_json(include: :tasks)
   end
 
   patch '/lists/:id' do
@@ -38,9 +37,10 @@ class ApplicationController < Sinatra::Base
     list.to_json
   end
 
+  # updated this request in case i end up using this endpoint to get my tasks
   get "/tasks" do
     tasks = Task.all
-    tasks.to_json
+    tasks.to_json(include: { user: { include: :lists } })
   end
 
   get "/tasks/:id" do
@@ -63,6 +63,7 @@ class ApplicationController < Sinatra::Base
       list_id: params[:list_id],
       status: false
     )
+    task.to_json
   end
 
   patch '/tasks/:id' do
@@ -74,6 +75,22 @@ class ApplicationController < Sinatra::Base
       # list_id: params[:list_id],
       status: params[:status]
     )
+    task.to_json
   end
+
+  # post '/login' do
+  #   user = User.where(params[:username], params[:password])
+  #   (err, user) => {
+  #    if err
+  #     r.send({err: err})
+  #    end
+
+  #    if user
+  #     user.to_json(include: { lists: { include: :tasks } })
+  #    elsif r.send({ message: "Wrong username/password comination!"})
+  #    end
+  #   }
+  #   # user.to_json(include: { lists: { include: :tasks } })
+  # end
 
 end

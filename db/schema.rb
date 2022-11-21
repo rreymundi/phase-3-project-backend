@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_08_172117) do
+ActiveRecord::Schema.define(version: 2022_11_21_222918) do
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
@@ -27,13 +27,6 @@ ActiveRecord::Schema.define(version: 2022_11_08_172117) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "status"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
