@@ -2,10 +2,6 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/" do
-    { message: "Welcome to List dot IT!" }.to_json
-  end
-
   get "/lists" do
     lists = List.all 
     lists.to_json(include: :tasks)
@@ -37,10 +33,9 @@ class ApplicationController < Sinatra::Base
     list.to_json
   end
 
-  # updated this request in case i end up using this endpoint to get my tasks
-  get "/tasks" do
+ get "/tasks" do
     tasks = Task.all
-    tasks.to_json(include: { user: { include: :lists } })
+    tasks.to_json(include: :list)
   end
 
   get "/tasks/:id" do
@@ -59,7 +54,6 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       description: params[:description],
       saved: false,
-      user_id: params[:user_id],
       list_id: params[:list_id],
       status: false
     )
@@ -77,20 +71,5 @@ class ApplicationController < Sinatra::Base
     )
     task.to_json
   end
-
-  # post '/login' do
-  #   user = User.where(params[:username], params[:password])
-  #   (err, user) => {
-  #    if err
-  #     r.send({err: err})
-  #    end
-
-  #    if user
-  #     user.to_json(include: { lists: { include: :tasks } })
-  #    elsif r.send({ message: "Wrong username/password comination!"})
-  #    end
-  #   }
-  #   # user.to_json(include: { lists: { include: :tasks } })
-  # end
 
 end

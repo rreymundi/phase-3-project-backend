@@ -1,5 +1,4 @@
 puts "🗑️ Clearing old data..."
-    User.destroy_all
     List.destroy_all
     Task.destroy_all
 
