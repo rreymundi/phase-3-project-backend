@@ -30,7 +30,7 @@ class ApplicationController < Sinatra::Base
     list.update(
       name: params[:name]
     )
-    list.to_json
+    list.to_json(include: :tasks)
   end
 
  get "/tasks" do
