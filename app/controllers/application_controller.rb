@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
 
   delete '/lists/:id' do
     list = List.find(params[:id])
+    list.tasks.destroy_all
     list.destroy
     list.to_json(include: :tasks)
   end
