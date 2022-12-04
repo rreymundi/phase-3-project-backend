@@ -106,4 +106,4 @@ DEPENDENCIES
   thin (~> 1.8)
 
 BUNDLED WITH
-   2.3.3
+   1.17.2

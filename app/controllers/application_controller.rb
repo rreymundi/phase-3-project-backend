@@ -64,8 +64,8 @@ class ApplicationController < Sinatra::Base
   patch '/tasks/:id' do
     task = Task.find(params[:id])
     task.update(
-      # name: params[:name],
-      # description: params[:description],
+      name: params[:name],
+      description: params[:description],
       saved: params[:saved],
       # list_id: params[:list_id],
       status: params[:status]
