@@ -47,7 +47,7 @@ Both models have full CRUD capabilities.
   - Update a task's name, description, "saved", and "checked" status.
   - Delete a task
 
-The database tables were set up using Active Record [migrations](https://guides.rubyonrails.org/active_record_migrations.html#using-the-change-method). Any changes to the schema should follow Active Record migration conventions.
+The database tables were set up using Active Record [migrations](https://guides.rubyonrails.org/active_record_migrations.html#using-the-change-method). Any changes to the database should be done via Active Record migrations. The schema.rb file will contain the latest state of the database.
 
 ## Resources
 
