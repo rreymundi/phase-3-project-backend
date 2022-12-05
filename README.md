@@ -1,6 +1,8 @@
 # Phase 3 project: List.it
 
-Lit.it is a personal task management tool that allows you to organize tasks via lists. This repo corresponds to the List.it API, which was set up using a Sinatra and [Active Record](https://guides.rubyonrails.org/active_record_basics.html).
+Lit.it is a personal task management tool that allows you to organize tasks via lists. 
+
+This repo corresponds to the List.it API, which was set up using a Sinatra and [Active Record](https://guides.rubyonrails.org/active_record_basics.html).
 
 ## Getting started
 
@@ -49,5 +51,9 @@ The database tables were set up using Active Record [migrations](https://guides.
 
 ## Resources
 
-- Use [Postman][https://www.postman.com/downloads/] to test API endpoints.
+- Use (Postman)[https://www.postman.com/downloads/] to test API endpoints.
 - Use `binding.pry` to test models and debug server requests.
+
+## Demo
+
+Check out a demo of List.it [here](https://youtu.be/xhb5Ozqw3Hk).
