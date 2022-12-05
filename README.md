@@ -45,13 +45,9 @@ Both models have full CRUD capabilities.
   - Update a task's name, description, "saved", and "checked" status.
   - Delete a task
 
-## Other resources
-
-- Use [Postman][https://www.postman.com/downloads/] to test API endpoints.
-- Use `binding.pry` to test models and debug server requests.
+The database tables were set up using Active Record [migrations](https://guides.rubyonrails.org/active_record_migrations.html#using-the-change-method). Any changes to the schema should follow Active Record migration conventions.
 
 ## Resources
 
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
+- Use [Postman][https://www.postman.com/downloads/] to test API endpoints.
+- Use `binding.pry` to test models and debug server requests.
