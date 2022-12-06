@@ -2,7 +2,7 @@
 
 Lit.it is a personal task management tool that allows you to organize tasks via lists. 
 
-This repo corresponds to the List.it API, which was set up using a Sinatra and [Active Record](https://guides.rubyonrails.org/active_record_basics.html).
+This repo corresponds to the List.it API, which was set up using Sinatra and [Active Record](https://guides.rubyonrails.org/active_record_basics.html).
 
 ## Getting started
 
@@ -23,6 +23,10 @@ Runs the server on port [http://localhost:9292](http://localhost:9292).
 ### `rake db:seed`
 
 Runs the seeds.rb file to get you started with some seed data. Use `rake db:seed:replant` to clear any changes made to the data and re-plant the data from the seeds.rb file.
+
+### `npm start`
+
+This command should be run from the front-end project directory after having forked and cloned it locally. Repo found [here](https://github.com/rreymundi/phase-3-project-frontend). 
 
 ## Model associations
 
@@ -51,7 +55,7 @@ The database tables were set up using Active Record [migrations](https://guides.
 
 ## Resources
 
-- Use (Postman)[https://www.postman.com/downloads/] to test API endpoints.
+- Use [Postman](https://www.postman.com/downloads/) to test API endpoints.
 - Use `binding.pry` to test models and debug server requests.
 
 ## Demo
